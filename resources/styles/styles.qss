@@ -1,0 +1,53 @@
+/* === Estilo general === */
+QWidget {
+    font-family: system-ui, sans-serif;
+}
+
+/* === TabWidget === */
+QTabWidget::pane {
+    border: 1px solid gray;
+    border-radius: 6px;
+    padding: 4px;
+    background: transparent;
+}
+
+/* === Tabs === */
+QTabBar::tab {
+    border-radius: 4px;
+    padding: 6px 12px;
+    margin: 6px; /* separación entre tabs */
+    min-width: 80px;
+}
+
+/* Hover */
+QTabBar::tab:hover {
+    background-color: gray;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Tab seleccionado */
+QTabBar::tab:selected {
+    border: 1px solid gray;
+    font-weight: bold;
+}
+
+QTabBar::tab:selected:hover {
+    background-color: dark gray;
+}
+
+/* Mantener texto horizontal en tabs a los lados */
+QTabBar::tab:top,
+QTabBar::tab:bottom {
+    min-height: 24px;
+}
+
+QTabBar::tab:left,
+QTabBar::tab:right {
+    min-width: 80px;
+    min-height: 24px;
+}
+
+/* === Alineación del tab bar === */
+QTabWidget::tab-bar {
+    alignment: center;
+}
