@@ -6,7 +6,10 @@
 #define DONROUTE_BINARYSEARCHTREE_H
 #include <iostream>
 #include <vector>
+#include <string>
 #include "Node.h"
+
+using namespace std;
 
 
 
@@ -31,7 +34,7 @@ public:
 
     void insert(const Station& station);
     void remove(int id);
-    bool search(int id) const; // Devuelve true si encuentra la estación
+    void clear(); // Limpiar todo el árbol
     Station* find(int id) const; // Devuelve puntero a la estación o nullptr si no la encuentra
 
     // Métodos para recorridos
@@ -39,11 +42,22 @@ public:
     vector<Station> preOrder() const;
     vector<Station> postOrder() const;
 
+    // Métodos para obtener recorridos como strings
+    string getPreOrderString() const;
+    string getInOrderString() const;
+    string getPostOrderString() const;
+
+    // Método para obtener todas las estaciones (in-order)
+    vector<Station> getAllStations() const;
+
     // Método para obtener todas las estaciones ordenadas alfabéticamente (usando in-order)
     vector<Station> getStationsAlphabetically() const;
 
     // Método para verificar si el árbol está vacío (útil para la GUI)
     bool isEmpty() const;
+    
+    // Método para buscar y retornar puntero a Station
+    Station* search(int id) const;
 };
 
 

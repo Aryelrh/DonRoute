@@ -3,6 +3,9 @@
 //
 
 #include "../header/BinarySearchTree.h"
+#include <string>
+
+using namespace std;
 
 // Constructor
 BinarySearchTree::BinarySearchTree() : root(nullptr) {}
@@ -10,6 +13,12 @@ BinarySearchTree::BinarySearchTree() : root(nullptr) {}
 // Destructor
 BinarySearchTree::~BinarySearchTree() {
     destroyTree(root);
+}
+
+// Limpiar todo el árbol
+void BinarySearchTree::clear() {
+    destroyTree(root);
+    root = nullptr;
 }
 
 // Insertar una estación en el árbol
@@ -88,11 +97,6 @@ Node* BinarySearchTree::findMin(Node* node) {
     return node;
 }
 
-// Buscar si existe una estación con el ID dado
-bool BinarySearchTree::search(int id) const {
-    return find(id) != nullptr;
-}
-
 // Encontrar y retornar una estación por ID
 Station* BinarySearchTree::find(int id) const {
     Node* current = root;
@@ -160,9 +164,58 @@ void BinarySearchTree::postOrderHelper(Node* node, vector<Station>& result) cons
     result.push_back(node->data);
 }
 
+// Obtener recorrido pre-orden como string
+string BinarySearchTree::getPreOrderString() const {
+    vector<Station> stations = preOrder();
+    string result = "";
+    for (size_t i = 0; i < stations.size(); i++) {
+        result += stations[i].name;
+        if (i < stations.size() - 1) {
+            result += " -> ";
+        }
+    }
+    return result.empty() ? "No hay estaciones" : result;
+}
+
+// Obtener recorrido in-orden como string
+string BinarySearchTree::getInOrderString() const {
+    vector<Station> stations = inOrder();
+    string result = "";
+    for (size_t i = 0; i < stations.size(); i++) {
+        result += stations[i].name;
+        if (i < stations.size() - 1) {
+            result += " -> ";
+        }
+    }
+    return result.empty() ? "No hay estaciones" : result;
+}
+
+// Obtener recorrido post-orden como string
+string BinarySearchTree::getPostOrderString() const {
+    vector<Station> stations = postOrder();
+    string result = "";
+    for (size_t i = 0; i < stations.size(); i++) {
+        result += stations[i].name;
+        if (i < stations.size() - 1) {
+            result += " -> ";
+        }
+    }
+    return result.empty() ? "No hay estaciones" : result;
+}
+
+// Obtener todas las estaciones (in-order)
+vector<Station> BinarySearchTree::getAllStations() const {
+    return inOrder();
+}
+
 // Obtener todas las estaciones ordenadas alfabéticamente (usando in-order)
 vector<Station> BinarySearchTree::getStationsAlphabetically() const {
     return inOrder();
+}
+
+// Método de búsqueda que retorna puntero (alias de find)
+Station* BinarySearchTree::search(int id) const {
+    return find(id);
 }
 
 // Verificar si el árbol está vacío

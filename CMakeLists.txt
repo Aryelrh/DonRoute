@@ -28,6 +28,8 @@ qt_add_executable(DonRoute
         header/BinarySearchTree.h
         src/DataManagement.cpp
         header/DataManagement.h
+        src/FileManager.cpp
+        header/FileManager.h
 )
 
 # --- Agrega el archivo de recursos ---

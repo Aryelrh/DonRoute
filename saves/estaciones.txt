@@ -1,0 +1,3 @@
+2
+1324|Estación Interna|451.543|327.733
+5678|Estación Central del Norte|600.5|500.2

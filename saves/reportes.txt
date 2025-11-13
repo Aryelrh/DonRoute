@@ -1,0 +1,36 @@
+============================================
+       REPORTE DEL SISTEMA DONROUTE        
+============================================
+
+--- INFORMACION GENERAL DEL SISTEMA ---
+Numero total de estaciones: 5
+Numero de consultas realizadas: 2
+Numero total de rutas: 4
+
+--- LISTADO DE ESTACIONES (ORDEN ALFABETICO) ---
+ID: 9831 | Nombre: Estación Central | Coordenadas: (349.092, 547.484)
+ID: 1313 | Nombre: Estación Esquinera | Coordenadas: (739.923, 697.143)
+ID: 1235 | Nombre: Estación Interamericana | Coordenadas: (299.764, 246.273)
+ID: 1234 | Nombre: Estación Interna | Coordenadas: (671.623, 299.317)
+ID: 1314 | Nombre: Estación Secundaria | Coordenadas: (322.531, 356.149)
+
+--- RUTAS Y CONEXIONES EXISTENTES ---
+Estación Interna <-> Estación Esquinera | Tiempo: 20 minutos
+Estación Interna <-> Estación Secundaria | Tiempo: 17.5 minutos
+Estación Interamericana <-> Estación Secundaria | Tiempo: 5.5 minutos
+Estación Secundaria <-> Estación Central | Tiempo: 9.5 minutos
+
+--- RECORRIDOS DEL ARBOL BINARIO DE ESTACIONES ---
+
+Recorrido PRE-ORDEN:
+Estación Interna -> Estación Interamericana -> Estación Central -> Estación Esquinera -> Estación Secundaria
+
+Recorrido IN-ORDEN:
+Estación Interna -> Estación Interamericana -> Estación Esquinera -> Estación Secundaria -> Estación Central
+
+Recorrido POST-ORDEN:
+Estación Secundaria -> Estación Esquinera -> Estación Central -> Estación Interamericana -> Estación Interna
+
+============================================
+          FIN DEL REPORTE                  
+============================================

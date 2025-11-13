@@ -33,6 +33,7 @@ private:
     Grafo grafo;
     Coords coords;
     ClosedSegments closedSegments;
+    int routeQueryCount;
 
 public:
     DataManagement();
@@ -41,6 +42,7 @@ public:
     // Gestión de estaciones
     void addStation(int id, const string& name, float x, float y);
     void removeStation(int id);
+    void updateStationName(int id, const string& newName);
     Station* getStation(int id) const;
     bool stationExists(int id) const;
     vector<Station> getAllStations() const;
@@ -48,6 +50,7 @@ public:
     // Gestión de rutas (aristas del grafo)
     void addRoute(int stationA, int stationB, float distance);
     void removeRoute(int stationA, int stationB);
+    bool routeExists(int stationA, int stationB) const;
     vector<pair<int, float>> getAdjacentStations(int stationId) const;
     float getDistance(int stationA, int stationB) const;
 
@@ -65,6 +68,19 @@ public:
     int getStationCount() const;
     const Grafo& getGrafo() const;
     const Coords& getCoords() const;
+    const ClosedSegments& getClosedSegments() const;
+    BinarySearchTree* getBST() const;
+    
+    // Métodos para carga de datos
+    Grafo& getGrafoMutable();
+    Coords& getCoordsMutable();
+    ClosedSegments& getClosedSegmentsMutable();
+    void clearAllData(); // Limpiar todos los datos para carga fresca
+    
+    // Contador de consultas
+    void incrementQueryCount();
+    int getQueryCount() const;
+    void resetQueryCount();
 };
 
 

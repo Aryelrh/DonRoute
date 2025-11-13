@@ -9,6 +9,7 @@
 // Constructor
 DataManagement::DataManagement() {
     stations = new BinarySearchTree();
+    routeQueryCount = 0;
 }
 
 // Destructor
@@ -86,6 +87,28 @@ void DataManagement::removeStation(int id) {
     }
     
     cout << "Estación eliminada: ID=" << id << endl;
+}
+
+void DataManagement::updateStationName(int id, const string& newName) {
+    if (!stationExists(id)) {
+        cerr << "Error: La estación con ID " << id << " no existe." << endl;
+        return;
+    }
+    
+    // Obtener coordenadas actuales antes de eliminar
+    auto currentCoords = coords[id];
+    
+    // Eliminar la estación del árbol
+    stations->remove(id);
+    
+    // Crear nueva estación con el nuevo nombre
+    Station updatedStation(id, newName);
+    
+    // Insertar de nuevo en el árbol
+    stations->insert(updatedStation);
+    
+    // Las coordenadas y el grafo permanecen sin cambios
+    cout << "Estación actualizada: ID=" << id << ", Nuevo nombre=" << newName << endl;
 }
 
 Station* DataManagement::getStation(int id) const {
@@ -180,6 +203,20 @@ void DataManagement::removeRoute(int stationA, int stationB) {
     closedSegments.erase(make_pair(stationB, stationA));
 
     cout << "Ruta eliminada: " << stationA << " <-> " << stationB << endl;
+}
+
+bool DataManagement::routeExists(int stationA, int stationB) const {
+    // Verificar si existe la estación A en el grafo
+    if (grafo.find(stationA) == grafo.end()) {
+        return false;
+    }
+    
+    // Buscar si B está en la lista de adyacentes de A
+    const auto& adyacentes = grafo.at(stationA);
+    auto it = find_if(adyacentes.begin(), adyacentes.end(),
+                      [stationB](const pair<int, float>& p) { return p.first == stationB; });
+    
+    return it != adyacentes.end();
 }
 
 vector<pair<int, float>> DataManagement::getAdjacentStations(int stationId) const {
@@ -278,4 +315,56 @@ const Grafo& DataManagement::getGrafo() const {
 
 const Coords& DataManagement::getCoords() const {
     return coords;
+}
+
+const ClosedSegments& DataManagement::getClosedSegments() const {
+    return closedSegments;
+}
+
+BinarySearchTree* DataManagement::getBST() const {
+    return stations;
+}
+
+// ==================== MÉTODOS PARA CARGA DE DATOS ====================
+
+Grafo& DataManagement::getGrafoMutable() {
+    return grafo;
+}
+
+Coords& DataManagement::getCoordsMutable() {
+    return coords;
+}
+
+ClosedSegments& DataManagement::getClosedSegmentsMutable() {
+    return closedSegments;
+}
+
+void DataManagement::clearAllData() {
+    // Limpiar el árbol binario
+    stations->clear();
+    
+    // Limpiar el grafo
+    grafo.clear();
+    
+    // Limpiar coordenadas
+    coords.clear();
+    
+    // Limpiar segmentos cerrados
+    closedSegments.clear();
+    
+    cout << "Todos los datos han sido limpiados" << endl;
+}
+
+// ==================== CONTADOR DE CONSULTAS ====================
+
+void DataManagement::incrementQueryCount() {
+    routeQueryCount++;
+}
+
+int DataManagement::getQueryCount() const {
+    return routeQueryCount;
+}
+
+void DataManagement::resetQueryCount() {
+    routeQueryCount = 0;
 }
