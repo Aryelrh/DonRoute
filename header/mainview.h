@@ -6,7 +6,7 @@
 #define DONROUTE_MAINVIEW_H
 
 #include <QWidget>
-
+#include <QPixmap>
 
 QT_BEGIN_NAMESPACE
 
@@ -24,8 +24,16 @@ public:
 
     ~MainView() override;
 
+protected:
+    void resizeEvent(QResizeEvent *event) override;
+
 private:
     Ui::MainView *ui;
+    QPixmap originalPixmap;
+    
+    // Métodos privados
+    void loadMapImage();
+    void resizeLabel();
 };
 
 

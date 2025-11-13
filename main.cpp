@@ -15,6 +15,9 @@ int main(int argc, char *argv[]) {
     }
 
     MainView view;
+    
+    // Establecer el tamaño inicial de la ventana
+    view.resize(980, 641);
 
     view.show();
     return app.exec();

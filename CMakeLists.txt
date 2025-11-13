@@ -22,6 +22,12 @@ qt_add_executable(DonRoute
         src/mainview.cpp
         header/mainview.h
         ui/mainview.ui
+        header/Station.h
+        header/Node.h
+        src/BinarySearchTree.cpp
+        header/BinarySearchTree.h
+        src/DataManagement.cpp
+        header/DataManagement.h
 )
 
 # --- Agrega el archivo de recursos ---

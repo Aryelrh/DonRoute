@@ -4,8 +4,15 @@ DonRoute_autogen/timestamp: \
 	/home/aryel/Documents/GitHub/DonRoute/build/CMakeFiles/3.31.6/CMakeCXXCompiler.cmake \
 	/home/aryel/Documents/GitHub/DonRoute/build/CMakeFiles/3.31.6/CMakeSystem.cmake \
 	/home/aryel/Documents/GitHub/DonRoute/build/DonRoute_autogen/moc_predefs.h \
+	/home/aryel/Documents/GitHub/DonRoute/header/BinarySearchTree.h \
+	/home/aryel/Documents/GitHub/DonRoute/header/DataManagement.h \
+	/home/aryel/Documents/GitHub/DonRoute/header/Node.h \
+	/home/aryel/Documents/GitHub/DonRoute/header/Station.h \
 	/home/aryel/Documents/GitHub/DonRoute/header/mainview.h \
 	/home/aryel/Documents/GitHub/DonRoute/main.cpp \
+	/home/aryel/Documents/GitHub/DonRoute/resources/styles/resources.qrc \
+	/home/aryel/Documents/GitHub/DonRoute/src/BinarySearchTree.cpp \
+	/home/aryel/Documents/GitHub/DonRoute/src/DataManagement.cpp \
 	/home/aryel/Documents/GitHub/DonRoute/src/mainview.cpp \
 	/usr/include/alloca.h \
 	/usr/include/asm-generic/bitsperlong.h \
@@ -447,6 +454,7 @@ DonRoute_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qversiontagging.h \
 	/usr/include/qt6/QtCore/qxptype_traits.h \
 	/usr/include/qt6/QtCore/qyieldcpu.h \
+	/usr/include/qt6/QtGui/QPixmap \
 	/usr/include/qt6/QtGui/qaction.h \
 	/usr/include/qt6/QtGui/qbitmap.h \
 	/usr/include/qt6/QtGui/qbrush.h \

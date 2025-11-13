@@ -61,8 +61,75 @@
            <string>Mapa</string>
           </attribute>
           <layout class="QGridLayout" name="gridLayout_2">
+           <item row="0" column="1">
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QLabel" name="lblInteractiveMap">
+               <property name="minimumSize">
+                <size>
+                 <width>400</width>
+                 <height>250</height>
+                </size>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>TextLabel</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="scaledContents">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_3">
+               <property name="sizeConstraint">
+                <enum>QLayout::SizeConstraint::SetMinAndMaxSize</enum>
+               </property>
+               <item>
+                <widget class="QPushButton" name="btnAddStation">
+                 <property name="maximumSize">
+                  <size>
+                   <width>500</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Añadir Estación</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="btnDeleteStation">
+                 <property name="text">
+                  <string>Borrar Estación</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_3">
+          <attribute name="title">
+           <string>Consulta de Rutas</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_3">
            <item row="0" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_2"/>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QGraphicsView" name="viewRoutesMap"/>
+             </item>
+            </layout>
            </item>
           </layout>
          </widget>

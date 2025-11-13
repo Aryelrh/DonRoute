@@ -51,3 +51,26 @@ QTabBar::tab:right {
 QTabWidget::tab-bar {
     alignment: center;
 }
+
+/* === Botones === */
+QPushButton {
+    background-color: #5B9BD5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    min-width: 80px;
+    max-width: 120px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+/* Hover - más claro */
+QPushButton:hover {
+    background-color: #7AAFDE;
+}
+
+/* Click/Pressed - más oscuro */
+QPushButton:pressed {
+    background-color: #4472B4;
+}
