@@ -9,8 +9,11 @@ using namespace std;
 struct Station {
     int id;
     string name;
+    
 public:
-    Station (int id, const string &name) : id(id), name(name) {}
+    // Constructor simple - las coordenadas se manejan en DataManagement::coords
+    Station (int id, const string &name) 
+        : id(id), name(name) {}
 };
 
 

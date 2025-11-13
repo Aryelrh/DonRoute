@@ -1,6 +1,8 @@
 <RCC>
   <qresource prefix="/resources/styles">
     <file>styles.qss</file>
-    <file>map.jpeg</file>
+  </qresource>
+  <qresource prefix="/resources/assets">
+    <file alias="map.png">../assets/map.png</file>
   </qresource>
 </RCC>

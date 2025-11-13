@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="/styles">
+    <file alias="styles.qss">styles/styles.qss</file>
+  </qresource>
+  <qresource prefix="/assets">
+    <file alias="map.png">assets/map.png</file>
+  </qresource>
+</RCC>

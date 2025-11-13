@@ -28,10 +28,10 @@ void DataManagement::addStation(int id, const string& name, float x, float y) {
         return;
     }
 
-    // Crear la estación
+    // Crear la estación SIN coordenadas (separación de responsabilidades)
     Station newStation(id, name);
     
-    // Agregar al árbol binario
+    // Agregar al árbol binario (maneja búsqueda/ordenamiento)
     stations->insert(newStation);
     
     // Agregar al grafo (inicialmente sin aristas)
@@ -39,7 +39,7 @@ void DataManagement::addStation(int id, const string& name, float x, float y) {
         grafo[id] = vector<pair<int, float>>();
     }
     
-    // Agregar coordenadas
+    // Agregar coordenadas al mapa separado (maneja posiciones geográficas)
     coords[id] = make_pair(x, y);
     
     cout << "Estación agregada: ID=" << id << ", Nombre=" << name 

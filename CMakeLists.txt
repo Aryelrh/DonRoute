@@ -31,7 +31,7 @@ qt_add_executable(DonRoute
 )
 
 # --- Agrega el archivo de recursos ---
-qt_add_resources(RESOURCES resources/styles/resources.qrc)
+qt_add_resources(RESOURCES resources/resources.qrc)
 target_sources(DonRoute PRIVATE ${RESOURCES})
 
 # --- Enlaza librerías Qt ---

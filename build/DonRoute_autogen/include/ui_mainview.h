@@ -49,7 +49,7 @@ public:
     {
         if (MainView->objectName().isEmpty())
             MainView->setObjectName("MainView");
-        MainView->resize(980, 641);
+        MainView->resize(880, 665);
         gridLayout = new QGridLayout(MainView);
         gridLayout->setObjectName("gridLayout");
         verticalLayout = new QVBoxLayout();
@@ -88,14 +88,11 @@ public:
         horizontalLayout_2->setObjectName("horizontalLayout_2");
         lblInteractiveMap = new QLabel(tab);
         lblInteractiveMap->setObjectName("lblInteractiveMap");
-        lblInteractiveMap->setMinimumSize(QSize(400, 250));
         QSizePolicy sizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(lblInteractiveMap->sizePolicy().hasHeightForWidth());
         lblInteractiveMap->setSizePolicy(sizePolicy);
-        lblInteractiveMap->setAlignment(Qt::AlignCenter);
-        lblInteractiveMap->setScaledContents(false);
 
         horizontalLayout_2->addWidget(lblInteractiveMap);
 
@@ -161,7 +158,7 @@ public:
         MainView->setWindowTitle(QCoreApplication::translate("MainView", "DonRoute", nullptr));
         label->setText(QCoreApplication::translate("MainView", "DonRoute", nullptr));
         label_2->setText(QCoreApplication::translate("MainView", "Sistema de rutas de La Mancha", nullptr));
-        lblInteractiveMap->setText(QCoreApplication::translate("MainView", "TextLabel", nullptr));
+        lblInteractiveMap->setText(QString());
         btnAddStation->setText(QCoreApplication::translate("MainView", "A\303\261adir Estaci\303\263n", nullptr));
         btnDeleteStation->setText(QCoreApplication::translate("MainView", "Borrar Estaci\303\263n", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("MainView", "Mapa", nullptr));
